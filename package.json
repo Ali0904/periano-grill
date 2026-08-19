@@ -1,0 +1,9 @@
+{
+  "name": "periano-grill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Periano Grill — MERN piri piri chicken ordering site (React + Express + MongoDB)",
+  "scripts": {
+    "build": "npm --prefix client install && npm --prefix server install && npm --prefix client run build"
+  }
+}
