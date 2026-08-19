@@ -1,0 +1,15 @@
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Netlify: set VITE_API_URL in the dashboard (Site settings → Environment variables)
+# to your Render API URL, e.g. https://periano-grill-api.onrender.com
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
