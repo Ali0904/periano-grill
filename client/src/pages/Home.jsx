@@ -14,6 +14,14 @@ const Hero = styled.section`
   padding: 96px 20px;
   h1 { font-size: 46px; margin: 0 0 16px; font-weight: 800; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
   p { max-width: 680px; margin: 0 auto 24px; font-size: 18px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+  @media (max-width: 768px) {
+    padding: 64px 16px;
+    h1 { font-size: 32px; }
+    p { font-size: 16px; }
+  }
+  @media (max-width: 420px) {
+    h1 { font-size: 27px; }
+  }
 `;
 
 const Cta = styled(Link)`
@@ -35,7 +43,7 @@ const Layout = styled.div`
   grid-template-columns: 3fr 1fr;
   gap: 28px;
   align-items: start;
-  @media (max-width: 920px) { grid-template-columns: 1fr; }
+  @media (max-width: 1024px) { grid-template-columns: 1fr; }
 `;
 
 const Main = styled.div`
@@ -86,13 +94,20 @@ const DipsBanner = styled.div`
 const Aside = styled.aside`
   position: sticky;
   top: 84px;
-  @media (max-width: 920px) { position: static; }
+  @media (max-width: 1024px) { position: static; }
 `;
 
 const SideStack = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SideCard = styled.section`

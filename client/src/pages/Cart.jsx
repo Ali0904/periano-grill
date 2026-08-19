@@ -14,12 +14,13 @@ const Wrap = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
   border: 2px solid ${({ theme }) => theme.line};
   border-radius: 12px;
   padding: 14px 16px;
   margin-bottom: 12px;
-  .name { font-weight: 700; flex: 1; }
+  .name { font-weight: 700; flex: 1; min-width: 140px; }
 `;
 
 const Qty = styled.div`
@@ -47,6 +48,7 @@ const Actions = styled.div`
   display: flex;
   gap: 12px;
   justify-content: flex-end;
+  flex-wrap: wrap;
   margin-top: 14px;
   a, button {
     padding: 14px 28px;
@@ -54,6 +56,9 @@ const Actions = styled.div`
     font-weight: 800;
     border: none;
     cursor: pointer;
+  }
+  @media (max-width: 560px) {
+    a, button { flex: 1; text-align: center; }
   }
   .primary { background: ${({ theme }) => theme.red}; color: ${({ theme }) => theme.onPrimary}; }
   .ghost { background: #fff; color: ${({ theme }) => theme.redDark}; border: 2px solid ${({ theme }) => theme.redDark}; }

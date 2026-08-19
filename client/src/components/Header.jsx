@@ -21,6 +21,10 @@ const Inner = styled.div`
   align-items: center;
   gap: 22px;
   padding: 12px 20px;
+  @media (max-width: 600px) {
+    padding: 10px 14px;
+    gap: 12px;
+  }
 `;
 
 const Logo = styled(Link)`
