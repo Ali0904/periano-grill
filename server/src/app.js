@@ -2,10 +2,18 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import authRoutes from "./routes/auth.js";
-import productRoutes from "./routes/products.js";
-import orderRoutes from "./routes/orders.js";
-import aiRoutes from "./routes/ai.js";
+import authMod from "./routes/auth.js";
+import productMod from "./routes/products.js";
+import orderMod from "./routes/orders.js";
+import aiMod from "./routes/ai.js";
+
+// Netlify's serverless runtime can resolve these local ESM modules to their
+// module namespace object ({ default: Router }) instead of the Router itself.
+// `??` handles both ESM (value) and CJS-interop ({ default }).
+const authRoutes = authMod.default ?? authMod;
+const productRoutes = productMod.default ?? productMod;
+const orderRoutes = orderMod.default ?? orderMod;
+const aiRoutes = aiMod.default ?? aiMod;
 
 const app = express();
 
