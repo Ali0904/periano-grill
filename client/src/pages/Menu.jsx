@@ -64,6 +64,23 @@ const Loading = styled.p`
   color: ${({ theme }) => theme.muted};
 `;
 
+const Skeleton = styled.div`
+  border: 2px solid ${({ theme }) => theme.line};
+  border-radius: 14px;
+  padding: 18px;
+  .ph {
+    background: linear-gradient(90deg, #eee, #f6f6f6, #eee);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    border-radius: 8px;
+  }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .img { height: 160px; margin-bottom: 12px; }
+  .ln { height: 14px; margin-bottom: 8px; }
+  .s { width: 60%; }
+  .price { height: 20px; width: 40%; margin-top: 6px; }
+`;
+
 const CatNav = styled.div`
   position: sticky;
   top: 64px;
@@ -197,7 +214,16 @@ export default function Menu() {
       </Toolbar>
 
       {loading ? (
-        <Loading>Loading menu…</Loading>
+        <Grid>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Skeleton key={i}>
+              <div className="ph img" />
+              <div className="ph ln" />
+              <div className="ph ln s" />
+              <div className="ph price" />
+            </Skeleton>
+          ))}
+        </Grid>
       ) : (
         <Grid>
           {visible.map((p) => (

@@ -1,4 +1,5 @@
 ﻿import { createContext, useContext, useState, useMemo, useEffect } from "react";
+import { useToast } from "./ToastContext.jsx";
 
 const CartContext = createContext(null);
 const STORAGE_KEY = "periano-grill-cart";
@@ -15,24 +16,26 @@ function loadInitial() {
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState(loadInitial);
+  const toast = useToast();
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  const add = (product) => {
+  const add = (product, qty = 1) => {
     setItems((prev) => {
       const found = prev.find((i) => i.product === product._id);
       if (found) {
         return prev.map((i) =>
-          i.product === product._id ? { ...i, quantity: i.quantity + 1 } : i
+          i.product === product._id ? { ...i, quantity: i.quantity + qty } : i
         );
       }
       return [
         ...prev,
-        { product: product._id, name: product.name, price: product.price, quantity: 1 }
+        { product: product._id, name: product.name, price: product.price, quantity: qty }
       ];
     });
+    toast.show(`Added ${product.name} to cart`);
   };
 
   const remove = (id) => setItems((prev) => prev.filter((i) => i.product !== id));
