@@ -9,7 +9,10 @@ export const theme = {
   cream: "#fff7f0",
   muted: "#6b6b6b",
   line: "#ededed",
-  maxWidth: "1200px"
+  maxWidth: "1200px",
+  shadow: "0 8px 24px rgba(0,0,0,0.08)",
+  shadowHover: "0 14px 34px rgba(0,0,0,0.16)",
+  radius: "16px"
 };
 
 export default theme;

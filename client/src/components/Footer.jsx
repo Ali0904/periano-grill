@@ -1,6 +1,6 @@
 ﻿import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaTiktok, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaTiktok, FaFacebookF, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = styled.footer`
   background: #111;
@@ -64,6 +64,18 @@ const Copy = styled.p`
   margin: 0;
 `;
 
+const Address = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #cfcfcf;
+  font-size: 14px;
+  margin: 0 0 18px;
+  a { color: ${({ theme }) => theme.red}; font-weight: 700; }
+  a:hover { color: #fff; }
+`;
+
 export default function FooterBar() {
   return (
     <Footer>
@@ -102,6 +114,13 @@ export default function FooterBar() {
             Google Play
           </a>
         </Badges>
+        <Address>
+          <FaMapMarkerAlt />
+          141A St John's Rd, Corstorphine, Edinburgh EH12 7SD &nbsp;·&nbsp;
+          <a href="https://maps.google.com/?q=141A+St+John's+Rd+Corstorphine+Edinburgh+EH12+7SD" target="_blank" rel="noopener noreferrer">
+            Get directions
+          </a>
+        </Address>
         <Copy>
           Privacy Policy &amp; Terms and Conditions &copy; Copyright Periano Grill
         </Copy>

@@ -1,26 +1,47 @@
 ﻿import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaPlay, FaMotorcycle, FaStore, FaUtensils, FaUsers, FaStar, FaChild, FaLeaf, FaAward, FaTags } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaMotorcycle, FaStore, FaUtensils, FaUsers, FaStar, FaChild, FaLeaf, FaAward, FaTags, FaLemon, FaPepperHot, FaMapMarkerAlt } from "react-icons/fa";
 import api from "../api/client.js";
 import Newsletter from "../components/Newsletter.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
 const Hero = styled.section`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=1200&q=80") center/cover no-repeat;
+  position: relative;
   color: #fff;
   text-align: center;
-  padding: 96px 20px;
-  h1 { font-size: 46px; margin: 0 0 16px; font-weight: 800; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-  p { max-width: 680px; margin: 0 auto 24px; font-size: 18px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+  padding: 110px 20px 40px;
+  background: linear-gradient(rgba(20,12,0,0.6), rgba(20,12,0,0.52)),
+              url("/images/grill/mixed-grill.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  h1 { font-size: 52px; margin: 0 0 16px; font-weight: 800; text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
+  p { max-width: 680px; margin: 0 auto 26px; font-size: 19px; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
   @media (max-width: 768px) {
-    padding: 64px 16px;
-    h1 { font-size: 32px; }
+    padding: 78px 16px 32px;
+    background-attachment: scroll;
+    h1 { font-size: 34px; }
     p { font-size: 16px; }
   }
   @media (max-width: 420px) {
-    h1 { font-size: 27px; }
+    h1 { font-size: 28px; }
+  }
+`;
+
+const Offerings = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+  img {
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    transition: transform 0.15s;
+    &:hover { transform: translateY(-4px) scale(1.05); }
   }
 `;
 
@@ -52,14 +73,28 @@ const Main = styled.div`
   h2 { font-size: 28px; text-align: center; margin-bottom: 18px; }
 `;
 
-const Flavour = styled.div`
+const FlavourRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+`;
+
+const FlavourItem = styled.div`
+  border: 2px solid ${({ theme }) => theme.line};
+  border-radius: 14px;
+  padding: 18px 22px;
+  min-width: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  .bar { display: flex; gap: 8px; }
-  .bar span { width: 54px; height: 18px; border-radius: 4px; }
-  p { color: ${({ theme }) => theme.muted}; text-align: center; max-width: 520px; }
+  gap: 10px;
+  background: #fff;
+  box-shadow: ${({ theme }) => theme.shadow};
+  transition: transform 0.15s;
+  &:hover { transform: translateY(-3px); }
+  .icons { font-size: 26px; display: flex; gap: 3px; }
+  strong { font-size: 15px; }
 `;
 
 const Grid = styled.div`
@@ -272,6 +307,34 @@ const KidsBanner = styled.div`
   }
 `;
 
+const Location = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  align-items: stretch;
+  .info {
+    background: #fff;
+    border: 2px solid ${({ theme }) => theme.line};
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: ${({ theme }) => theme.shadow};
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .info h3 { margin: 0 0 6px; display: flex; align-items: center; gap: 8px; font-size: 19px; }
+  .info p { margin: 4px 0; color: ${({ theme }) => theme.muted}; }
+  .info a { color: ${({ theme }) => theme.redDark}; font-weight: 800; margin-top: 8px; }
+  iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: 2px solid ${({ theme }) => theme.line};
+    border-radius: 16px;
+  }
+  @media (max-width: 760px) { grid-template-columns: 1fr; }
+`;
+
 const spiceColors = ["#f4791f", "#f4791f", "#e8772e", "#e05a2b", "#e2231a", "#9b1b13"];
 const CATEGORIES = ["pizzas", "burgers", "wraps", "grill-specialties", "sides", "kids-meals", "dips", "desserts", "drinks"];
 
@@ -304,6 +367,12 @@ export default function Home() {
           and flavours specially created for Periano Grill.
         </p>
         <Cta to="/menu">Order Now</Cta>
+        <Offerings>
+          <img src="/images/grill/quarter-chicken.jpg" alt="Grilled chicken" />
+          <img src="/images/pizzas/margherita-pizza.jpg" alt="Pizza" />
+          <img src="/images/burgers/classic-burger.jpg" alt="Burger" />
+          <img src="/images/wraps/classico-wrapster.jpg" alt="Wrap" />
+        </Offerings>
       </Hero>
 
       <Layout>
@@ -316,18 +385,28 @@ export default function Home() {
           </section>
 
           <section>
-            <h2>Our Flavour Scale</h2>
-            <Flavour>
-              <div className="bar">
-                {spiceColors.map((c, i) => (
-                  <span key={i} style={{ background: c }} />
-                ))}
-              </div>
-              <p>
-                From mild &amp; lemony to extra hot — find your perfect piri piri heat, from our
-                gentle herbs up to the full Periano Grill inferno.
-              </p>
-            </Flavour>
+            <h2>Find Your Heat</h2>
+            <FlavourRow>
+              {[
+                { label: "Lemon & Herb", lemon: true, color: "#7CB342" },
+                { label: "Mild", count: 1, color: "#F9A825" },
+                { label: "Medium", count: 2, color: "#FB8C00" },
+                { label: "Hot", count: 3, color: "#E64A19" },
+                { label: "Extra Hot", count: 4, color: "#C62828" },
+              ].map((f) => (
+                <FlavourItem key={f.label}>
+                  <div className="icons" style={{ color: f.color }}>
+                    {f.lemon
+                      ? <FaLemon />
+                      : Array.from({ length: f.count }).map((_, i) => <FaPepperHot key={i} />)}
+                  </div>
+                  <strong>{f.label}</strong>
+                </FlavourItem>
+              ))}
+            </FlavourRow>
+            <p style={{ textAlign: "center", color: "#6b6b6b", marginTop: 14, maxWidth: 560, margin: "14px auto 0" }}>
+              From zesty lemon &amp; herb to our full Periano Grill inferno — pick the heat that hits you.
+            </p>
           </section>
 
           <section>
@@ -419,6 +498,27 @@ export default function Home() {
               </div>
               <Link to="/menu">See kids menu</Link>
             </KidsBanner>
+          </section>
+
+          <section>
+            <h2><FaMapMarkerAlt /> Find Us</h2>
+            <Location>
+              <div className="info">
+                <h3><FaStore /> Periano Grill — Corstorphine</h3>
+                <p><strong>Address:</strong> 141A St John's Rd, Corstorphine, Edinburgh EH12 7SD</p>
+                <p><strong>Opening hours:</strong> Open daily 11:00 – 23:00</p>
+                <p><strong>Delivery:</strong> Right across Edinburgh until late</p>
+                <a href="https://maps.google.com/?q=141A+St+John's+Rd+Corstorphine+Edinburgh+EH12+7SD" target="_blank" rel="noopener noreferrer">
+                  Open in Google Maps →
+                </a>
+              </div>
+              <iframe
+                title="Periano Grill location map"
+                loading="lazy"
+                src="https://maps.google.com/maps?q=141A+St+John's+Rd+Corstorphine+Edinburgh+EH12+7SD&output=embed"
+                allowFullScreen
+              ></iframe>
+            </Location>
           </section>
         </Main>
 
