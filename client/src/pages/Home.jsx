@@ -273,7 +273,7 @@ const KidsBanner = styled.div`
 `;
 
 const spiceColors = ["#f4791f", "#f4791f", "#e8772e", "#e05a2b", "#e2231a", "#9b1b13"];
-const CATEGORIES = ["grilled", "fried", "vegetarian", "platters", "sides", "dips", "desserts", "drinks"];
+const CATEGORIES = ["pizzas", "burgers", "wraps", "grill-specialties", "sides", "kids-meals", "dips", "desserts", "drinks"];
 
 const COMPANY_DESCRIPTION =
   "Periano Grill is the UK's home of flame-grilled Piri Piri chicken. We marinate our chicken in a signature blend of African Bird's Eye chillies and herbs, then grill it over an open flame for that unmistakable smoky heat. From gentle & lemony to our full inferno, every box is built to your taste — paired with golden fries, fresh dips and ice-cold drinks. Whether you order delivery, click & collect, or sit down with family, Periano Grill brings bold flavour, halal-certified chicken and friendly service to your neighbourhood.";

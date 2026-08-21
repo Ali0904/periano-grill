@@ -13,7 +13,12 @@ const productSchema = new mongoose.Schema(
         "vegetarian",
         "platters",
         "kids",
+        "kids-meals",
         "sides",
+        "pizzas",
+        "burgers",
+        "wraps",
+        "grill-specialties",
         "dips",
         "desserts",
         "drinks",
@@ -27,7 +32,11 @@ const productSchema = new mongoose.Schema(
     reviews: { type: Number, min: 0, default: 0 },
     tags: { type: [String], default: [] },
     image: { type: String, default: "" },
-    available: { type: Boolean, default: true }
+    available: { type: Boolean, default: true },
+    featured: { type: Boolean, default: false },
+    calories: { type: Number },
+    allergens: { type: [String], default: [] },
+    upsell: { type: mongoose.Schema.Types.Mixed }
   },
   { timestamps: true }
 );
