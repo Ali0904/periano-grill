@@ -2677,7 +2677,7 @@ export const menuItems = [
     "description": "Can of Coke to wash down your piri piri.",
     "price": 1.2,
     "category": "drinks",
-    "image": "/images/drinks/can-of-coke.svg",
+    "image": "/images/drinks/can-of-coke.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2692,7 +2692,7 @@ export const menuItems = [
     "description": "Diet Coke to wash down your piri piri.",
     "price": 1.2,
     "category": "drinks",
-    "image": "/images/drinks/diet-coke.svg",
+    "image": "/images/drinks/diet-coke.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2707,7 +2707,7 @@ export const menuItems = [
     "description": "Sprite to wash down your piri piri.",
     "price": 1.2,
     "category": "drinks",
-    "image": "/images/drinks/sprite.svg",
+    "image": "/images/drinks/sprite.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2722,7 +2722,7 @@ export const menuItems = [
     "description": "Fanta Orange to wash down your piri piri.",
     "price": 1.2,
     "category": "drinks",
-    "image": "/images/drinks/fanta-orange.svg",
+    "image": "/images/drinks/fanta-orange.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2737,7 +2737,7 @@ export const menuItems = [
     "description": "Still Water to wash down your piri piri.",
     "price": 0.99,
     "category": "drinks",
-    "image": "/images/drinks/still-water.svg",
+    "image": "/images/drinks/still-water.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2752,7 +2752,7 @@ export const menuItems = [
     "description": "Sparkling Water to wash down your piri piri.",
     "price": 0.99,
     "category": "drinks",
-    "image": "/images/drinks/sparkling-water.svg",
+    "image": "/images/drinks/sparkling-water.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2767,7 +2767,7 @@ export const menuItems = [
     "description": "Ting to wash down your piri piri.",
     "price": 1.5,
     "category": "drinks",
-    "image": "/images/drinks/ting.svg",
+    "image": "/images/drinks/ting.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2782,7 +2782,7 @@ export const menuItems = [
     "description": "Rubicon Mango to wash down your piri piri.",
     "price": 1.5,
     "category": "drinks",
-    "image": "/images/drinks/rubicon-mango.svg",
+    "image": "/images/drinks/rubicon-mango.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
