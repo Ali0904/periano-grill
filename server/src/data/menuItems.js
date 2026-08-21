@@ -1267,7 +1267,7 @@ export const menuItems = [
     "description": "Chicken strips, cheese, jalapeños, mayo, lettuce & sriracha in tasca bread.",
     "price": 8.49,
     "category": "wraps",
-    "image": "/images/wraps/chicken-tasca.jpg",
+    "image": "/images/grill/chicken-tasca.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1417,7 +1417,7 @@ export const menuItems = [
     "description": "Whole flame-grilled peri peri chicken — perfect for sharing. Choose your heat.",
     "price": 14.99,
     "category": "grill-specialties",
-    "image": "/images/grill/whole-chicken.jpg",
+    "image": "/images/grill/whole-chicken.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1447,7 +1447,7 @@ export const menuItems = [
     "description": "5 succulent strips of peri peri chicken breast, grilled to perfection.",
     "price": 7.49,
     "category": "grill-specialties",
-    "image": "/images/grill/5-tender-strips.jpg",
+    "image": "/images/grill/5-tender-strips.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1477,7 +1477,7 @@ export const menuItems = [
     "description": "5 classic peri piri chicken wings, flame-grilled with your choice of sauce.",
     "price": 6.99,
     "category": "grill-specialties",
-    "image": "/images/grill/5-wings.jpg",
+    "image": "/images/grill/5-wings.webp",
     "spiceLevel": 3,
     "dietary": [
       "gluten-free",
@@ -1507,7 +1507,7 @@ export const menuItems = [
     "description": "¼ flame-grilled chicken with spicy rice & mixed vegetables.",
     "price": 8.49,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-box.jpg",
+    "image": "/images/grill/chicken-box.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1536,7 +1536,7 @@ export const menuItems = [
     "description": "Spicy rice topped with succulent strips of marinated peri peri chicken.",
     "price": 8.99,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-n-rice.jpg",
+    "image": "/images/grill/chick-n-rice.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1565,7 +1565,7 @@ export const menuItems = [
     "description": "Fries loaded with flame-grilled chicken, melted cheese, salsa, jalapeños & onions.",
     "price": 8.99,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-loaded-fries.jpg",
+    "image": "/images/grill/loaded-fries.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1594,7 +1594,7 @@ export const menuItems = [
     "description": "Flame-grilled chicken with crunchy nachos, tomato salsa, jalapeños & cheese.",
     "price": 8.49,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-nachos.jpg",
+    "image": "/images/grill/chicken-nachos.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1801,7 +1801,7 @@ export const menuItems = [
     "description": "Flame-grilled chicken breast with tomatoes, mayo & lettuce in a toasted pitta.",
     "price": 7.99,
     "category": "grill-specialties",
-    "image": "/images/grill/prime-pitta.jpg",
+    "image": "/images/grill/prime-pitta.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1831,7 +1831,7 @@ export const menuItems = [
     "description": "Succulent chicken strips with fresh salad.",
     "price": 7.99,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-salad.jpg",
+    "image": "/images/grill/chicken-salad.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1918,7 +1918,7 @@ export const menuItems = [
     "description": "Fries loaded with flame-grilled chicken, melted cheese, salsa, jalapeños & onions.",
     "price": 9.99,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-loaded-fries.jpg",
+    "image": "/images/grill/chicken-loaded-fries.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2006,7 +2006,7 @@ export const menuItems = [
     "description": "Fluffy potato fries with a crisp, crunchy coating.",
     "price": 2.49,
     "category": "sides",
-    "image": "/images/sides/fries.jpg",
+    "image": "/images/sides/fries.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2026,7 +2026,7 @@ export const menuItems = [
     "description": "Bigger portion of our famous fluffy, crunchy fries.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/large-fries.jpg",
+    "image": "/images/sides/large-fries.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2046,7 +2046,7 @@ export const menuItems = [
     "description": "Lightly seasoned potato wedges, golden & crispy.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/wedges.jpg",
+    "image": "/images/sides/wedges.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2066,7 +2066,7 @@ export const menuItems = [
     "description": "Steamed rice with our secret blend of herbs & spices.",
     "price": 3.99,
     "category": "sides",
-    "image": "/images/sides/spicy-rice.jpg",
+    "image": "/images/sides/spicy-rice.webp",
     "spiceLevel": 3,
     "dietary": [
       "gluten-free",
@@ -2109,7 +2109,7 @@ export const menuItems = [
     "description": "Freshly steamed corn on the cob.",
     "price": 2.99,
     "category": "sides",
-    "image": "/images/sides/corn-cob.jpg",
+    "image": "/images/sides/corn-on-the-cob.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2128,7 +2128,7 @@ export const menuItems = [
     "description": "Corn on the cob brushed with peri butter.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/piri-corn-cob.jpg",
+    "image": "/images/sides/piri-corn.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2171,7 +2171,7 @@ export const menuItems = [
     "description": "5 crispy onion rings with lightly seasoned coating.",
     "price": 2.99,
     "category": "sides",
-    "image": "/images/sides/onion-rings.jpg",
+    "image": "/images/sides/onion-rings.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2192,7 +2192,7 @@ export const menuItems = [
     "description": "3 crispy coated sticks of warm gooey mozzarella.",
     "price": 2.99,
     "category": "sides",
-    "image": "/images/sides/mozzarella-sticks.jpg",
+    "image": "/images/sides/mozzarella-sticks.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2214,7 +2214,7 @@ export const menuItems = [
     "description": "Crispy fresh lettuce, juicy tomatoes & crunchy cucumber.",
     "price": 2.49,
     "category": "sides",
-    "image": "/images/sides/side-salad.jpg",
+    "image": "/images/sides/side-salad.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2304,7 +2304,7 @@ export const menuItems = [
     "description": "4 melted chilli cheese in a crunchy breadcrumb coating.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/chilli-cheese-nuggets.jpg",
+    "image": "/images/sides/chilli-cheese-nuggets.webp",
     "spiceLevel": 3,
     "dietary": [
       "halal"
@@ -2393,7 +2393,7 @@ export const menuItems = [
     "description": "Corn on the cob brushed with peri peri butter.",
     "price": 3.99,
     "category": "sides",
-    "image": "/images/sides/piri-corn-cob.jpg",
+    "image": "/images/sides/piri-piri-corn-on-cob.webp",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2414,7 +2414,7 @@ export const menuItems = [
     "description": "3 succulent strips of peri peri chicken breast.",
     "price": 5.49,
     "category": "sides",
-    "image": "/images/sides/3-tender-strips.jpg",
+    "image": "/images/sides/3x-tender-strips.webp",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2437,7 +2437,7 @@ export const menuItems = [
     "description": "3 classic peri peri chicken wings.",
     "price": 4.99,
     "category": "sides",
-    "image": "/images/sides/3-wings.jpg",
+    "image": "/images/sides/3x-wings.webp",
     "spiceLevel": 3,
     "dietary": [
       "gluten-free",
