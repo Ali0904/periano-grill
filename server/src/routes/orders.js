@@ -1,6 +1,8 @@
 import express from "express";
-import Order from "../models/Order.js";
-import Product from "../models/Product.js";
+import OrderMod from "../models/Order.js";
+import ProductMod from "../models/Product.js";
+const Order = OrderMod.default ?? OrderMod;
+const Product = ProductMod.default ?? ProductMod;
 import { auth, admin } from "../middleware/auth.js";
 
 const router = express.Router();

@@ -1,6 +1,7 @@
 import express from "express";
 import rateLimit from "express-rate-limit";
-import Product from "../models/Product.js";
+import ProductMod from "../models/Product.js";
+const Product = ProductMod.default ?? ProductMod;
 
 const router = express.Router();
 
