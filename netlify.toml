@@ -9,7 +9,7 @@
 # API requests are handled by the Netlify Function (must come BEFORE the SPA fallback)
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/api"
+  to = "/.netlify/functions/api/:splat"
   status = 200
 
 # Single-page-app fallback (deep links resolve to index.html)
