@@ -150,7 +150,7 @@ export default function Menu() {
     else if (sort === "price-desc") sorted.sort((a, b) => b.price - a.price);
     else if (sort === "name") sorted.sort((a, b) => a.name.localeCompare(b.name));
     return sorted;
-  }, [products, query, diet, sort]);
+  }, [products, cat, query, diet, sort]);
 
   return (
     <Wrap>
