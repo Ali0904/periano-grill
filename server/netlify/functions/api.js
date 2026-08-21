@@ -1,6 +1,10 @@
 import serverless from "serverless-http";
-import app from "../../src/app.js";
+import appMod from "../../src/app.js";
 import { connectDB } from "../../src/db.js";
+
+// Interop guard: in Netlify's runtime the ESM default export can resolve to the
+// module namespace object ({ default: app }) instead of the app itself.
+const app = appMod.default ?? appMod;
 
 // Establish the MongoDB connection when the function cold-starts.
 // (mongoose caches the connection, so subsequent invocations reuse it.)
