@@ -1565,7 +1565,7 @@ export const menuItems = [
     "description": "Fries loaded with flame-grilled chicken, melted cheese, salsa, jalapeños & onions.",
     "price": 8.99,
     "category": "grill-specialties",
-    "image": "/images/grill/loaded-fries.jpg",
+    "image": "/images/grill/chicken-loaded-fries.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2128,7 +2128,7 @@ export const menuItems = [
     "description": "Corn on the cob brushed with peri butter.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/piri-corn.jpg",
+    "image": "/images/sides/piri-corn-cob.jpg",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2326,7 +2326,7 @@ export const menuItems = [
     "description": "Fries topped with melted cheddar cheese.",
     "price": 4.49,
     "category": "sides",
-    "image": "/images/sides/chips-cheese.jpg",
+    "image": "/images/sides/chips-cheese-doner.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2550,7 +2550,7 @@ export const menuItems = [
     "description": "Grilled chicken hot dog in soft bun, fries & fruit drink.",
     "price": 5.49,
     "category": "kids-meals",
-    "image": "/images/kids/kids-hotdog.jpg",
+    "image": "/images/kids/kids-burger.jpg",
     "spiceLevel": 3,
     "dietary": [
       "halal"
@@ -2634,5 +2634,162 @@ export const menuItems = [
     "upsell": {
       "enabled": false
     }
+  },
+  {
+    "name": "Pepe's Cakes",
+    "description": "Soft, moist Pepe's celebration cake — a sweet way to finish.",
+    "price": 3.49,
+    "category": "desserts",
+    "image": "/images/desserts/pepes-cakes.webp",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal",
+      "vegetarian"
+    ],
+    "calories": 360,
+    "allergens": [
+      "gluten",
+      "milk",
+      "egg"
+    ],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Ben & Jerry's Ice Cream",
+    "description": "Creamy Ben & Jerry's tub — a classic indulgent treat.",
+    "price": 4.49,
+    "category": "desserts",
+    "image": "/images/desserts/ben-jerrys.webp",
+    "spiceLevel": 0,
+    "dietary": [
+      "vegetarian"
+    ],
+    "calories": 500,
+    "allergens": [
+      "milk"
+    ],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Can of Coke",
+    "description": "Can of Coke to wash down your piri piri.",
+    "price": 1.2,
+    "category": "drinks",
+    "image": "/images/drinks/can-of-coke.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Diet Coke",
+    "description": "Diet Coke to wash down your piri piri.",
+    "price": 1.2,
+    "category": "drinks",
+    "image": "/images/drinks/diet-coke.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Sprite",
+    "description": "Sprite to wash down your piri piri.",
+    "price": 1.2,
+    "category": "drinks",
+    "image": "/images/drinks/sprite.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Fanta Orange",
+    "description": "Fanta Orange to wash down your piri piri.",
+    "price": 1.2,
+    "category": "drinks",
+    "image": "/images/drinks/fanta-orange.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Still Water",
+    "description": "Still Water to wash down your piri piri.",
+    "price": 0.99,
+    "category": "drinks",
+    "image": "/images/drinks/still-water.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Sparkling Water",
+    "description": "Sparkling Water to wash down your piri piri.",
+    "price": 0.99,
+    "category": "drinks",
+    "image": "/images/drinks/sparkling-water.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Ting",
+    "description": "Ting to wash down your piri piri.",
+    "price": 1.5,
+    "category": "drinks",
+    "image": "/images/drinks/ting.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
+  },
+  {
+    "name": "Rubicon Mango",
+    "description": "Rubicon Mango to wash down your piri piri.",
+    "price": 1.5,
+    "category": "drinks",
+    "image": "/images/drinks/rubicon-mango.svg",
+    "spiceLevel": 0,
+    "dietary": [
+      "halal"
+    ],
+    "calories": 0,
+    "allergens": [],
+    "available": true,
+    "featured": false
   }
 ];
