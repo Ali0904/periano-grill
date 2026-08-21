@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
+import mongoose from "mongoose";
+import { connectDB } from "./db.js";
 import authMod from "./routes/auth.js";
 import productMod from "./routes/products.js";
 import orderMod from "./routes/orders.js";
@@ -47,6 +49,20 @@ const authLimiter = rateLimit({
 });
 
 app.use(express.json({ limit: "10kb" }));
+
+// Ensure the MongoDB connection is established (handles serverless cold starts
+// and reconnects). A failed connection returns a clear 503 instead of crashing
+// the whole function process.
+app.use(async (req, res, next) => {
+  const st = mongoose.connection.readyState;
+  if (st === 1 || st === 2) return next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    res.status(503).json({ error: "Database unavailable", detail: err.message });
+  }
+});
 
 // Health check
 app.get("/api/health", (req, res) => res.json({ status: "ok", time: new Date().toISOString() }));
