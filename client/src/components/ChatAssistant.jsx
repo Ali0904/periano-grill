@@ -157,8 +157,8 @@ const InputRow = styled.form`
 const SUGGESTIONS = [
   "What's your most popular item?",
   "Any vegan options?",
-  "What's the spiciest thing?",
-  "Recommend something for me"
+  "How do Meal Deals work?",
+  "Where's your store?"
 ];
 
 export default function ChatAssistant() {
@@ -166,7 +166,7 @@ export default function ChatAssistant() {
   const [messages, setMessages] = useState([
     {
       mine: false,
-      text: "Hi! I'm the Periano Grill assistant. Ask me about our menu, top sellers, best-rated items, dietary options, prices, delivery or stores."
+      text: "Hi! I'm the Periano Grill assistant. Ask me about our menu, meal deals, dietary options, prices, delivery — or where to find us at 141A St John's Rd, Corstorphine, Edinburgh."
     }
   ]);
   const [input, setInput] = useState("");

@@ -15,11 +15,13 @@ const aiLimiter = rateLimit({
 
 const SITE = {
   name: "Periano Grill",
-  ordering: "Order delivery, click & collect, or dine-in from the Menu page. Build your box and check out in a few taps.",
-  stores: "We have stores across the UK — use the 'Our Stores' page to find your nearest Periano Grill and get directions.",
-  hours: "Most stores are open 11:00–23:00, with delivery until late. Check your local store page for exact hours.",
-  contact: "Reach us via the 'Our Stores' page for your nearest branch, or through our social channels in the footer.",
-  services: ["Delivery", "Click & Collect", "Dine-in", "Catering for events"]
+  ordering: "Order delivery, click & collect, or dine-in from the Menu page. Open any item to add a dip or build a Meal Deal (main + dip + side + drink) before you check out.",
+  store: "We have one Periano Grill location: 141A St John's Rd, Corstorphine, Edinburgh EH12 7SD. It's open daily 11:00–23:00. Get directions from the Stores page or the footer.",
+  hours: "Our Corstorphine store is open daily 11:00–23:00, with delivery across Edinburgh until late.",
+  contact: "Visit us at 141A St John's Rd, Corstorphine, Edinburgh EH12 7SD, or reach us through the social channels in the footer.",
+  services: ["Delivery across Edinburgh", "Click & Collect", "Dine-in", "Catering for events"],
+  mealDeal: "On any product page you can 'Add a dip' (e.g. a Periano dip) and turn it into a Meal Deal — your main plus a dip, a side of fries and a drink at one combined price. Great value for lunch or dinner.",
+  categories: "Our menu includes: Pizzas, Burgers, Wraps, Grill Specialities, Sides, Kids Meals, Dips, Desserts and Drinks."
 };
 
 function buildContext(products) {
@@ -80,7 +82,17 @@ function answer(question, ctx) {
       ctx.favourites.length ? " (customer favourites)" : ""
     }:\n${list(picks)}\n\nHighly rated right now:\n${list(ctx.bestRated)}`;
     products = pickProducts(picks);
-  } else if (has("cheap", "price", "cost", "affordable", "budget", "deal", "value")) {
+  } else if (has("meal", "combo", "deal", "bundle")) {
+    text = SITE.mealDeal + `\n\nExample meal deal:\n• Main (e.g. ${
+      ctx.topSellers[0] ? ctx.topSellers[0].name : "grilled chicken"
+    })\n• Dip\n• Side of fries\n• Drink\nAdd them all straight from the product page in one tap.`;
+    products = pickProducts(ctx.topSellers.length ? ctx.topSellers : ctx.bestRated);
+  } else if (has("dip", "sauce")) {
+    text = `You can add a dip to almost any item. On a product page just tap 'Add a dip' to include it in your order. Our dips:\n${list(
+      byCat("addon")
+    )}`;
+    products = pickProducts(byCat("addon"));
+  } else if (has("cheap", "price", "cost", "affordable", "budget", "value")) {
     text = `Best value picks:\n${list(ctx.cheapest)}`;
     products = pickProducts(ctx.cheapest);
   } else if (has("dessert", "sweet", "ice")) {
@@ -93,15 +105,15 @@ function answer(question, ctx) {
     text = `Sides:\n${list(byCat("sides"))}`;
     products = pickProducts(byCat("sides"));
   } else if (has("platter", "family", "share", "feast")) {
-    text = `Sharing platters:\n${list(byCat("platters"))}`;
-    products = pickProducts(byCat("platters"));
+    text = `Sharing & grill specialities:\n${list(byCat("grill-specialties"))}`;
+    products = pickProducts(byCat("grill-specialties"));
   } else if (has("kid", "child", "children", "family")) {
-    text = `Kids & family:\n${list(byCat("kids"))}`;
-    products = pickProducts(byCat("kids"));
+    text = `Kids & family:\n${list(byCat("kids-meals"))}`;
+    products = pickProducts(byCat("kids-meals"));
   } else if (has("delivery", "collect", "order", "how do i", "buy", "get")) {
     text = SITE.ordering;
   } else if (has("store", "location", "nearest", "branch", "where", "address")) {
-    text = SITE.stores;
+    text = SITE.store;
   } else if (has("hour", "open", "close", "time")) {
     text = SITE.hours;
   } else if (has("contact", "phone", "email", "reach")) {
@@ -112,12 +124,12 @@ function answer(question, ctx) {
     } reviews. Customer favourites:\n${list(ctx.favourites)}`;
     products = pickProducts(ctx.favourites);
   } else if (has("menu", "category", "what do you sell", "offer")) {
-    text = `Our menu includes: Grilled, Fried, Vegetarian, Platters, Kids, Sides, Dips, Desserts and Drinks. Popular right now:\n${list(
+    text = `${SITE.categories} You can add a dip or build a Meal Deal on any item. Popular right now:\n${list(
       ctx.topSellers.length ? ctx.topSellers : ctx.bestRated
     )}`;
     products = pickProducts(ctx.topSellers.length ? ctx.topSellers : ctx.bestRated);
   } else {
-    text = `Hi! I'm the ${SITE.name} assistant. I can help with our menu, top sellers, best-rated and customer-favourite items, dietary options (vegan, vegetarian, gluten-free, halal), prices, delivery and stores. Try asking:\n• What's your most popular item?\n• Any vegan options?\n• What's the spiciest thing?\n• Recommend something for me`;
+    text = `Hi! I'm the ${SITE.name} assistant. I can help with our menu, top sellers, best-rated and customer-favourite items, dietary options (vegan, vegetarian, gluten-free, halal), Meal Deals, prices, delivery and our store. Try asking:\n• What's your most popular item?\n• Any vegan options?\n• How do Meal Deals work?\n• Recommend something for me`;
   }
 
   return { answer: text, products };

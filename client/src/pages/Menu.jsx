@@ -64,13 +64,61 @@ const Loading = styled.p`
   color: ${({ theme }) => theme.muted};
 `;
 
+const CatNav = styled.div`
+  position: sticky;
+  top: 64px;
+  z-index: 999;
+  background: #fff;
+  border-bottom: 1px solid ${({ theme }) => theme.line};
+  margin: 16px 0 18px;
+  padding: 12px 0;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+`;
+
+const CatBtn = styled.button`
+  border: 2px solid ${({ theme }) => theme.line};
+  background: #fff;
+  color: ${({ theme }) => theme.charcoal};
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: transform 0.12s;
+  &:hover { transform: translateY(-1px); }
+  &.active {
+    background: ${({ theme }) => theme.red};
+    color: ${({ theme }) => theme.onPrimary};
+    border-color: ${({ theme }) => theme.red};
+  }
+`;
+
 const DIETARY = ["halal", "vegetarian", "vegan", "gluten-free"];
+
+const CATEGORIES = [
+  { value: "all", label: "All" },
+  { value: "pizzas", label: "Pizzas" },
+  { value: "burgers", label: "Burgers" },
+  { value: "wraps", label: "Wraps" },
+  { value: "grill-specialties", label: "Grill" },
+  { value: "sides", label: "Sides" },
+  { value: "kids-meals", label: "Kids" },
+  { value: "dips", label: "Dips" },
+  { value: "desserts", label: "Desserts" },
+  { value: "drinks", label: "Drinks" }
+];
 
 export default function Menu() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [diet, setDiet] = useState([]);
+  const [cat, setCat] = useState("all");
   const [sort, setSort] = useState("featured");
 
   useEffect(() => {
@@ -87,6 +135,9 @@ export default function Menu() {
 
   const visible = useMemo(() => {
     let list = products;
+    if (cat !== "all") {
+      list = list.filter((p) => p.category === cat);
+    }
     if (query.trim()) {
       const q = query.toLowerCase();
       list = list.filter((p) => p.name.toLowerCase().includes(q));
@@ -108,6 +159,18 @@ export default function Menu() {
         Flame-grilled, fresh and full of flavour. Add your favourites to the cart and order for
         delivery or collection.
       </p>
+
+      <CatNav aria-label="Menu categories">
+        {CATEGORIES.map((c) => (
+          <CatBtn
+            key={c.value}
+            className={cat === c.value ? "active" : ""}
+            onClick={() => setCat(c.value)}
+          >
+            {c.label}
+          </CatBtn>
+        ))}
+      </CatNav>
 
       <Toolbar>
         <Search
