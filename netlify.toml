@@ -5,6 +5,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--no-audit --no-fund --legacy-peer-deps"
 
 # API requests are handled by the Netlify Function (must come BEFORE the SPA fallback)
 [[redirects]]
