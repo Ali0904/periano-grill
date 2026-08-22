@@ -1653,7 +1653,7 @@ export const menuItems = [
     "description": "Quarter chicken, 2 strips, 2 wings & lamb kebab. The ultimate experience.",
     "price": 13.99,
     "category": "grill-specialties",
-    "image": "/images/grill/mixed-grill.jpg",
+    "image": "/images/grill/mixed-grill-platter.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -1743,7 +1743,7 @@ export const menuItems = [
     "description": "Whole tandoori chicken leg, charred in clay oven style, served with raita.",
     "price": 9.49,
     "category": "grill-specialties",
-    "image": "/images/grill/tandoori-chicken-grill.jpg",
+    "image": "/images/grill/tandoori-chicken.jpg",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1772,7 +1772,7 @@ export const menuItems = [
     "description": "Flame-grilled boneless chicken thighs on skewers with peppers and onions.",
     "price": 10.99,
     "category": "grill-specialties",
-    "image": "/images/grill/espetada.jpg",
+    "image": "/images/grill/classic-espetada.jpg",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -1918,7 +1918,7 @@ export const menuItems = [
     "description": "Fries loaded with flame-grilled chicken, melted cheese, salsa, jalapeños & onions.",
     "price": 9.99,
     "category": "grill-specialties",
-    "image": "/images/grill/chicken-loaded-fries.webp",
+    "image": "/images/grill/chicken-loaded-fries.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2026,7 +2026,7 @@ export const menuItems = [
     "description": "Bigger portion of our famous fluffy, crunchy fries.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/large-fries.webp",
+    "image": "/images/sides/large-fries.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2128,7 +2128,7 @@ export const menuItems = [
     "description": "Corn on the cob brushed with peri butter.",
     "price": 3.49,
     "category": "sides",
-    "image": "/images/sides/piri-corn.webp",
+    "image": "/images/sides/piri-corn.jpg",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2281,7 +2281,7 @@ export const menuItems = [
     "description": "4 crispy vegetable spring rolls with sweet chilli dip.",
     "price": 3.99,
     "category": "sides",
-    "image": "/images/sides/spring-rolls.jpg",
+    "image": "/images/sides/veg-spring-rolls.jpg",
     "spiceLevel": 0,
     "dietary": [
       "vegetarian",
@@ -2326,7 +2326,7 @@ export const menuItems = [
     "description": "Fries topped with melted cheddar cheese.",
     "price": 4.49,
     "category": "sides",
-    "image": "/images/sides/chips-cheese-doner.jpg",
+    "image": "/images/sides/chips-cheese.jpg",
     "spiceLevel": 0,
     "dietary": [
       "halal"
@@ -2393,7 +2393,7 @@ export const menuItems = [
     "description": "Corn on the cob brushed with peri peri butter.",
     "price": 3.99,
     "category": "sides",
-    "image": "/images/sides/piri-piri-corn-on-cob.webp",
+    "image": "/images/sides/piri-piri-corn-on-cob.jpg",
     "spiceLevel": 0,
     "dietary": [
       "gluten-free",
@@ -2550,7 +2550,7 @@ export const menuItems = [
     "description": "Grilled chicken hot dog in soft bun, fries & fruit drink.",
     "price": 5.49,
     "category": "kids-meals",
-    "image": "/images/kids/kids-burger.jpg",
+    "image": "/images/kids/kids-hot-dog-meal.jpg",
     "spiceLevel": 3,
     "dietary": [
       "halal"

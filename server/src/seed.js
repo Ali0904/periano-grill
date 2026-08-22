@@ -6,21 +6,15 @@ import { menuItems } from "./data/menuItems.js";
 
 dotenv.config();
 
-const IMG = {
-  sauce: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80",
-  fries: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
-  grilled: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80"
-};
-
 // Keep the dips + add-ons the storefront relies on (Home "Dips That Hit",
-// Cart cross-sell, ProductDetail add-ons).
+// Cart cross-sell, ProductDetail add-ons). Images are local & distinct.
 const EXTRA = [
-  { name: "Piri Piri Mayo Dip", description: "Creamy piri piri mayo dip.", price: 1.0, category: "dips", spiceLevel: 1, dietary: ["vegetarian"], image: IMG.sauce },
-  { name: "Periano Grill Hot Sauce Bottle 250ml", description: "Take the heat home — hot sauce.", price: 4.0, category: "dips", spiceLevel: 5, dietary: ["vegetarian", "vegan", "gluten-free"], image: IMG.sauce },
-  { name: "Periano Grill Mango Lime Sauce Bottle 250ml", description: "Sweet & tangy mango lime sauce.", price: 4.0, category: "dips", spiceLevel: 1, dietary: ["vegetarian", "vegan", "gluten-free"], image: IMG.sauce },
-  { name: "Extra Piri Piri Dip", description: "Add an extra pot of piri piri mayo.", price: 0.5, category: "addon", spiceLevel: 1, dietary: ["vegetarian"], image: IMG.sauce },
-  { name: "Make it Large", description: "Upgrade to large fries & a regular drink.", price: 2.5, category: "addon", spiceLevel: 0, dietary: ["halal"], image: IMG.fries },
-  { name: "Add Extra Chicken", description: "Add a grilled chicken portion.", price: 3.0, category: "addon", spiceLevel: 2, dietary: ["halal", "gluten-free"], image: IMG.grilled }
+  { name: "Piri Piri Mayo Dip", description: "Creamy piri piri mayo dip.", price: 1.0, category: "dips", spiceLevel: 1, dietary: ["vegetarian"], image: "/images/dips/piri-mayo-dip.jpg" },
+  { name: "Periano Grill Hot Sauce Bottle 250ml", description: "Take the heat home — hot sauce.", price: 4.0, category: "dips", spiceLevel: 5, dietary: ["vegetarian", "vegan", "gluten-free"], image: "/images/dips/hot-sauce-bottle.jpg" },
+  { name: "Periano Grill Mango Lime Sauce Bottle 250ml", description: "Sweet & tangy mango lime sauce.", price: 4.0, category: "dips", spiceLevel: 1, dietary: ["vegetarian", "vegan", "gluten-free"], image: "/images/dips/mango-lime-sauce.jpg" },
+  { name: "Extra Piri Piri Dip", description: "Add an extra pot of piri piri mayo.", price: 0.5, category: "addon", spiceLevel: 1, dietary: ["vegetarian"], image: "/images/dips/extra-piri-dip.jpg" },
+  { name: "Make it Large", description: "Upgrade to large fries & a regular drink.", price: 2.5, category: "addon", spiceLevel: 0, dietary: ["halal"], image: "/images/addon/make-it-large.jpg" },
+  { name: "Add Extra Chicken", description: "Add a grilled chicken portion.", price: 3.0, category: "addon", spiceLevel: 2, dietary: ["halal", "gluten-free"], image: "/images/addon/extra-chicken.jpg" }
 ];
 
 const ALL = [...menuItems, ...EXTRA];
