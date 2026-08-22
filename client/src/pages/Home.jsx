@@ -1,7 +1,7 @@
 ﻿import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaPlay, FaMotorcycle, FaStore, FaUtensils, FaUsers, FaStar, FaChild, FaLeaf, FaAward, FaTags, FaLemon, FaPepperHot, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaMotorcycle, FaStore, FaUtensils, FaUsers, FaStar, FaChild, FaLeaf, FaAward, FaTags, FaLemon, FaPepperHot, FaMapMarkerAlt, FaShieldAlt, FaTruck, FaHeart, FaQuoteLeft, FaCheckCircle } from "react-icons/fa";
 import api from "../api/client.js";
 import Newsletter from "../components/Newsletter.jsx";
 import ProductCard from "../components/ProductCard.jsx";
@@ -215,6 +215,59 @@ const About = styled.div`
   p { max-width: 760px; margin: 0 auto; color: ${({ theme }) => theme.charcoal}; font-size: 16px; line-height: 1.65; }
 `;
 
+const WhyUs = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+`;
+
+const WhyCard = styled.div`
+  border: 2px solid ${({ theme }) => theme.line};
+  border-radius: 14px;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: ${({ theme }) => theme.shadow};
+  transition: transform 0.15s, border-color 0.15s;
+  &:hover { transform: translateY(-3px); border-color: ${({ theme }) => theme.red}; }
+  .ic { font-size: 30px; color: ${({ theme }) => theme.red}; margin-bottom: 10px; }
+  h4 { margin: 0 0 6px; font-size: 17px; }
+  p { margin: 0; font-size: 14px; color: ${({ theme }) => theme.muted}; }
+`;
+
+const Testimonials = styled.section`
+  h2 { font-size: 28px; text-align: center; margin-bottom: 18px; }
+`;
+
+const Section = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 40px auto;
+  padding: 0 20px;
+`;
+
+const TGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+`;
+
+const TCard = styled.figure`
+  margin: 0;
+  border: 2px solid ${({ theme }) => theme.line};
+  border-radius: 14px;
+  padding: 20px;
+  background: ${({ theme }) => theme.cream};
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .quote { font-size: 26px; color: ${({ theme }) => theme.red}; }
+  blockquote { margin: 0; font-size: 15px; line-height: 1.6; color: ${({ theme }) => theme.charcoal}; }
+  .stars { color: #f5a623; display: flex; gap: 2px; }
+  figcaption { font-weight: 800; font-size: 14px; }
+  figcaption span { display: block; font-weight: 500; color: ${({ theme }) => theme.muted}; font-size: 12px; }
+`;
+
 const Combos = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -382,6 +435,12 @@ export default function Home() {
               <h2>About Periano Grill</h2>
               <p>{COMPANY_DESCRIPTION}</p>
             </About>
+            <WhyUs>
+              <WhyCard><div className="ic"><FaShieldAlt /></div><h4>Halal Certified</h4><p>100% halal chicken, prepared with care every day.</p></WhyCard>
+              <WhyCard><div className="ic"><FaFire /></div><h4>Flame-Grilled Fresh</h4><p>Marinated in signature piri piri &amp; grilled over open flame.</p></WhyCard>
+              <WhyCard><div className="ic"><FaTruck /></div><h4>Fast Delivery</h4><p>Hot food to your door across Edinburgh until late.</p></WhyCard>
+              <WhyCard><div className="ic"><FaHeart /></div><h4>Family Friendly</h4><p>Kids meals, combos &amp; rewards the whole family loves.</p></WhyCard>
+            </WhyUs>
           </section>
 
           <section>
@@ -582,6 +641,32 @@ export default function Home() {
           </SideStack>
         </Aside>
       </Layout>
+
+      <Section>
+        <Testimonials>
+          <h2><FaQuoteLeft /> What our customers say</h2>
+          <TGrid>
+            <TCard>
+              <div className="quote"><FaQuoteLeft /></div>
+              <div className="stars">{Array.from({ length: 5 }).map((_, i) => <FaStar key={i} />)}</div>
+              <blockquote>"Best piri piri in Edinburgh — the chicken was juicy and the heat was spot on. Delivery was quick and hot!"</blockquote>
+              <figcaption>Sophie M.<span>Corstorphine · Regular</span></figcaption>
+            </TCard>
+            <TCard>
+              <div className="quote"><FaQuoteLeft /></div>
+              <div className="stars">{Array.from({ length: 5 }).map((_, i) => <FaStar key={i} />)}</div>
+              <blockquote>"The family combo is unreal value and the kids loved the meals. We order every Friday now."</blockquote>
+              <figcaption>James T.<span>Leith · Family</span></figcaption>
+            </TCard>
+            <TCard>
+              <div className="quote"><FaQuoteLeft /></div>
+              <div className="stars">{Array.from({ length: 4 }).map((_, i) => <FaStar key={i} />)}</div>
+              <blockquote>"Loaded fries and the mango lime dip are addictive. App made reordering a breeze."</blockquote>
+              <figcaption>Amara K.<span>Gorgie · App user</span></figcaption>
+            </TCard>
+          </TGrid>
+        </Testimonials>
+      </Section>
 
       <Newsletter />
     </>
